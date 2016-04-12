@@ -20,7 +20,9 @@
 			#shape {
 				background-color:red;
 				display:none;
-				position:absolute;
+				position:relative;
+				color:#fff;
+				text-align:center;
 				
 		
 			}
@@ -39,6 +41,8 @@
 				
 			}
 			
+	
+			
 			
 			.bold{
 			font-weight:bold;
@@ -50,6 +54,7 @@
 
 	<body>
 	
+	<div style="left:40px;top:0px;position:fixed;">
 	<h1>Beaver Crushers!</h1>
 	
 	<p>Uh oh! Your house, like many Canadian homes, is infested with Beavers! Click them away as fast as you can!</p>
@@ -57,14 +62,27 @@
 	<p class="bold">Your Shape Time: <span id="timeTakenShape">0</span></p>
 	<p class="bold">Your Beaver Time: <span id="timeTakenBeaver">0</span></p>
 	<p class="bold">Your Med Beaver Time: <span id="timeTakenBeaverMed">0</span></p>
-	<p class="bold">Beavers Crushed: <span id="beaversCrushed">0</span></p>
-	<p class="bold">Your HP: <span id="playerHP">0</span></p>
+	</div>
+	
+	<div style="left:850px;top:50px;position:fixed;">
+	<p class="bold"> Beavers Crushed: <br><span id="beaversCrushed">0</span></p>
+	<p class="bold"> Your HP: <br><span id="playerHP">0</span></p>
+	</div>
 	
 	
 	
-	<div id="shape"></div>
+	<!--Game Board-->
+	<div style="position:absolute;">
+	
+	
+	<div id="shape" style="position:relative;">
+		<h2 style="position: relative; top: 40%; text-align:center; ">HP+</h2>
+	</div>
 	<div id="beaverGen"></div>
 	<div id="beaverMed"></div>
+	
+	
+	</div>
 	
 	<script type="text/javascript">
 	
@@ -115,7 +133,7 @@
 	
 	
 	function makeShapeAppear() {
-		var top = Math.random() * 300;
+		var top = Math.random() * 250;
 		var left = Math.random() * 400;
 		var width = Math.random() * 100 + 50;
 		
